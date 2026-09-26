@@ -8,7 +8,7 @@ import LandingPage from "./Pages/LandingPage";
 import SummaryPage from "./Component/SummaryPage";
 import Residence from "./Component/Residence";
 import Footer from "./Component/Footer";
-import SignUp from "./Pages/Singup";
+import SignUp from "./Pages/SingUp";
 import Navbar from "./Pages/Navbar";
 import Homes from "./Pages/Homes";
 import MoreDetail from "./Component/MoreDetail";
