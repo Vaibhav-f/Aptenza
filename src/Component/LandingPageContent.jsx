@@ -94,7 +94,7 @@ const LandingPageContent = () => {
                     
                    </div>
 
-                    <Link  to={"/Homelisting"} className="  h-14 w-full max-w-[15rem] rounded-full  border border-white/40 bg-white/10 px-8 py-4 text-base font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black cursor-pointer sm:w-auto lg:h-14 lg:px-9  ">
+                    <Link  to={"/ListRental"} className="  h-14 w-full max-w-[15rem] rounded-full  border border-white/40 bg-white/10 px-8 py-4 text-base font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black cursor-pointer sm:w-auto lg:h-14 lg:px-9  ">
 
                     I own a rental
                     

@@ -13,6 +13,7 @@ import Navbar from "./Pages/Navbar";
 import Homes from "./Pages/Homes";
 import MoreDetail from "./Component/MoreDetail";
 import ApplyForm from "./Component/ApplyForm";
+import ListRental from "./Component/ListRental";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,6 +60,7 @@ const App = () => {
 <Route path="/homes" element={<Homes/>}/>
 <Route path="/MoreDetail" element={<MoreDetail/>}/>
 <Route path="/Apply" element={<ApplyForm/>}/>
+<Route path="/ListRental" element={<ListRental/>} />
 
       </Routes>
     </div>

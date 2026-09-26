@@ -29,7 +29,7 @@ useEffect(() => {
 
   const navLinks = [
     { name: "Homes", href: "/homes" },
-    { name: "Owners", href: "#owners" },
+    { name: "Owners", href: "/ListRental" },
     { name: "How it works", href: "#how-it-works" },
     { name: "FAQ", href: "#faq" },
   ];
