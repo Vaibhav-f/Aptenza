@@ -1,15 +1,7 @@
 
 import { useEffect, useState } from "react";
-import {
-  Search,
-  Moon,
-  Sun,
-  Globe,
-  UserRound,
-  Menu,
-  X,
-} from "lucide-react";
-import { href, Link } from "react-router-dom";
+import { Search, Moon, Sun, Globe, UserRound, Menu, X,} from "lucide-react";
+import {  Link } from "react-router-dom";
 
 const Navbarcontent = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,10 +20,10 @@ useEffect(() => {
 }, [darkMode]);
 
   const navLinks = [
-    { name: "Homes", href: "/homes" },
-    { name: "Owners", href: "/ListRental" },
-    { name: "How it works", href: "#how-it-works" },
-    { name: "FAQ", href: "#faq" },
+    { name: "Homes", link: "/homes" },
+    { name: "Owners", link: "/ListRental" },
+    { name: "How it works", link: "/how-it-works" },
+    { name: "Complaints", link: "/complaints" },
   ];
 
   return (
@@ -39,28 +31,23 @@ useEffect(() => {
       <header className="fixed top-0 left-0 z-50 w-full bg-white/10  bg-white text-black dark:bg-[#141414] dark:text-white  backdrop-blur-2xl text-black">
         <nav className="mx-auto flex h-[72px] w-full max-w-[1500px] items-center px-5 sm:px-8 lg:px-10">
 
-          {/* LOGO */}
-          <a href="/"
-            className="mr-8 text-[22px] font-black tracking-[-0.05em] sm:text-[25px]"
-
-          >APTENZA  </a>
-          {/* DESKTOP NAV */}
+         
+          <Link to={"/"} className="mr-8 text-[22px] font-black tracking-[-0.05em] sm:text-[25px]">APTENZA</Link>
+          
           <div className="hidden items-center lg:flex">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-4 py-2 text-[14px] font-medium transition-colors duration-200 hover:text-neutral-500"
-              >
+
+              <Link key={link} to={link.link}  className="px-4 py-2 text-[14px] font-medium transition-colors duration-200 hover:text-neutral-500">
                 {link.name}
-              </a>
+              
+              </Link>
+              
             ))}
           </div>
 
-          {/* RIGHT SIDE */}
           <div className="ml-auto hidden items-center  gap-1 lg:flex">
 
-            {/* SEARCH */}
+           
             <div className="flex items-center rounded-full border border-white/40 bg-white/10 px-4 py-2 backdrop-blur-sm">
               <Search size={17} className="mr-2 text-white" />
 
@@ -71,7 +58,7 @@ useEffect(() => {
               />
             </div>
 
-            {/* DARK MODE */}
+           
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="flex  h-10 w-10 items-center justify-center rounded-full transition hover:bg-neutral-100  cursor-pointer"
@@ -84,23 +71,17 @@ useEffect(() => {
               )}
             </button>
 
-            {/* LANGUAGE */}
-            <button className="flex h-10 items-center gap-1.5 rounded-full px-3 text-sm transition hover:bg-neutral-100 cursor-pointer">
-              <Globe size={16} strokeWidth={1.8} />
-              <span>EN</span>
-            </button>
+           
 
-            {/* SIGN IN */}
-            <a
-              href="/signin"
-              className="ml-2 flex items-center gap-2 rounded-full border border-black px-4 py-2 text-[14px] cursor-pointer font-medium transition duration-200 hover:bg-black hover:text-white"
-            >
-              <UserRound size={15} />
+
+            <Link to={"/signin"}
+            className="ml-2 flex items-center gap-2 rounded-full border border-black px-4 py-2 text-[14px] cursor-pointer font-medium transition duration-200 hover:bg-black hover:text-white"
+             >
+            <UserRound size={15} />
               Sign in
-            </a>
+            </Link>
+           
           </div>
-
-          {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="ml-auto flex h-10 w-10 items-center justify-center rounded-full lg:hidden cursor-pointer"
@@ -110,7 +91,7 @@ useEffect(() => {
           </button>
         </nav>
 
-        {/* MOBILE NAV */}
+      
         <div
           className={`overflow-hidden border-t border-neutral-100 bg-white transition-all duration-300 lg:hidden ${menuOpen
               ? "max-h-[600px] opacity-100"
@@ -119,21 +100,21 @@ useEffect(() => {
         >
           <div className="px-5 py-4 sm:px-8">
 
-            {/* LINKS */}
+          
             <div className="flex flex-col">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
-                  href={link.href}
+                  href={link.link}
                   onClick={() => setMenuOpen(false)}
-                  className="border-b border-neutral-100 py-4 text-[16px] font-medium"
+                  className="border-b border-neutral-100 py-4 text-[16px] font-medium cursor-pointer"
                 >
                   {link.name}
                 </a>
               ))}
             </div>
 
-            {/* MOBILE ACTIONS */}
+           
             <div className="flex items-center gap-2 py-5">
 
               <button className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 cursor-pointer">
@@ -147,10 +128,7 @@ useEffect(() => {
                 {darkMode ? <Sun size={18} /> : <Moon size={18} />}
               </button>
 
-              <button className="flex h-11 items-center gap-2 rounded-full border border-neutral-200 px-4 text-sm cursor-pointer">
-                <Globe size={16} />
-                EN
-              </button>
+             
 
               <a
                 href="#signin"
@@ -165,7 +143,6 @@ useEffect(() => {
         </div>
       </header>
 
-      {/* NAVBAR SPACE */}
       <div className="h-[72px]" />
     </>
   );
